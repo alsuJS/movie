@@ -1,12 +1,14 @@
 import { Star } from "lucide-react";
 
-export const MovieCard = () => {
+export const MovieCard = ({ movie }) => {
+  console.log("movie:==>", movie);
+
   return (
     <div>
       <div>
         <img
           className="rounded-t-lg w-[158px] h-[234px] md:w-[230px] md:h-[340px]"
-          src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/arthur_christmas.jpg"
+          src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
           alt=""
         />
       </div>
@@ -19,7 +21,7 @@ export const MovieCard = () => {
           <span className="text-gray-400 m-0">/10</span>
         </div>
         <p className="mx-[8px] mt-[4px] mb-[8px] w-[142px] h-[40px] md:w-[214px] md:h-[56px]">
-          Dear Santa
+          {movie?.title}
         </p>
       </div>
     </div>
